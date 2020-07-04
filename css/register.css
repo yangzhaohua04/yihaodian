@@ -1,0 +1,129 @@
+.content {
+  border-bottom: 1px solid #cfcfcf;
+  border-top: 1px solid #cfcfcf;
+  height: 536px; }
+
+.content_c > h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 50px;
+  color: #333; }
+
+.content_c {
+  width: 330px;
+  height: 463px;
+  margin: 22px auto;
+  background-color: white; }
+
+.content_c > ul > li > input {
+  width: 328px;
+  height: 52px;
+  margin-top: 10px;
+  border: 1px solid #cfcfcf;
+  text-indent: 20px; }
+
+/* .yanzhen1 > input {
+  float: left;
+  width: 192px;
+  height: 52px;
+  margin-top: 10px;
+  border: 1px solid #cfcfcf;
+  text-indent: 20px; } */
+
+/* .yanzhen2 > button {
+  float: right;
+  width: 126px;
+  height: 52px;
+  margin-top: 10px;
+  border: 1px solid #cfcfcf;
+  text-indent: 20px; }
+
+.yanzhen2 > button {
+  background: 0;
+  line-height: 52px; } */
+
+.content_c > p {
+  margin: 12px 0;
+  height: 35px;
+  font-size: 12px;
+  line-height: 35px;
+  color: #666;
+  text-indent: 1em; }
+
+.content_c > p > a {
+  color: #06c; }
+
+#btnReg {
+  display: block;
+  width: 330px;
+  height: 52px;
+  margin-top: 6px;
+  background-color: #ff3c3c;
+  font-size: 16px;
+  line-height: 52px;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px; 
+  cursor: pointer;
+}
+
+#btnReg:hover {
+  background-color: #d72226; 
+}
+
+.content_c > ul > li {
+  position: relative; }
+
+.content_c > ul > li > span, .content_c > ul > li > div > span {
+  position: absolute;
+  left: 330px;
+  top: 10px;
+  font-size: 12px;
+  color: #666;;
+  width: 250px;
+  height: 30px;
+  line-height: 30px;
+}
+
+
+/* content_li1 */
+.content_li1{
+  width: 328px;
+  height: 52px;
+  margin-top: 10px;
+  
+}
+.content_li1>input{
+  float: left;
+  width: 200px;
+  height: 52px;
+  border: 1px solid #cfcfcf;
+  text-indent: 20px;
+}
+.image-code-box{
+ 
+ float: left;
+  width: 125px;
+  margin-left: 3px;
+  height: 52px;
+  border: 1px solid #cfcfcf;
+}
+#captcha{
+  width: 125px;
+  height: 52px;
+  text-indent: 0;
+}
+
+/* footer */
+.footer {
+  width: 980px;
+  height: 42px;
+  margin: 0 auto;
+  margin-top: 18px;
+  line-height: 25px; }
+
+/* footer */
+.footer > p {
+  text-align: center;
+  font-size: 12px; }

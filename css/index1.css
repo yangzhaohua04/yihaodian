@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: black; }
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: gray; }
+
+#banner-box {
+  margin: 20px auto;
+  width: 800px;
+  height: 300px;
+  background-color: pink;
+  border-radius: 10px; }
+
+.center-box, #wenju-box, #jiadian-box {
+  margin: 20px auto;
+  width: 800px; }
+
+.full-box, #wenju-box .detail ul, #wenju-box .detail ul img {
+  width: 100%;
+  height: 100%; }
+
+#wenju-box {
+  height: 250px;
+  background-color: pink;
+  border-radius: 10px; }
+  #wenju-box .title {
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #ededed;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: antiquewhite; }
+  #wenju-box .detail {
+    width: 100%;
+    height: 220px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; }
+    #wenju-box .detail ul {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px; }
+      #wenju-box .detail ul li {
+        width: 25%;
+        height: 100%;
+        float: left;
+        border: 1px solid black;
+        box-sizing: border-box; }
+      #wenju-box .detail ul li:nth-child(1) {
+        border-bottom-left-radius: 10px; }
+      #wenju-box .detail ul li:nth-child(4) {
+        border-bottom-right-radius: 10px; }
+
+#jiadian-box {
+  height: 300px;
+  background-color: pink;
+  border-radius: 10px; }

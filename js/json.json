@@ -1,0 +1,62 @@
+"use strict"; function getWenJu() { $.get("./php/getGoodsListNew.php",
+    { typeId: "001", count: "9"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += '\n            <li>\n            <a href="../goodsdetail.html?goodsId='.concat(n.goodsId, '"><img src="').concat(n.goodsImg, '" alt="">\n            <a href=""> ').concat(n.goodsDesc, '</a>\n            <div class="speed"><span></span></div>\n            <span>￥').concat(n.goodsPrice,
+            "</span><b>￥").concat(n.beiyong1,
+            "</b></a>\n            </li> \n            ")
+        }), $("#super ul").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "002", count: "4"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += "\n            <li>\n                <p>".concat(n.goodsName,
+            "</p>\n                <p>￥").concat(n.goodsPrice, '</p>\n                <img src="').concat(n.goodsImg, '" alt="">\n            </li>\n            ')
+        }), $("#xinxian>ul").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "003", count: "4"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += "\n            <li>\n                <p>".concat(n.goodsName,
+            "</p>\n                <p>￥").concat(n.goodsPrice, '</p>\n                <img src="').concat(n.goodsImg, '" alt="">\n            </li>\n            ')
+        }), $("#women>ul").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "003", count: "1"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += "\n            <strong>".concat(n.goodsName,
+            "</strong>\n            <span>").concat(n.beiyong1,
+            "</span>\n            <b>").concat(n.beiyong2, '</b>\n            <img src="').concat(n.goodsImg, '" alt="">\n            ')
+        }), $("#women1").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "003", count: "1"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += "\n            <strong>".concat(n.goodsName,
+            "</strong>\n            <span>").concat(n.beiyong1,
+            "</span>\n            <b>").concat(n.beiyong2, '</b>\n            <img src="').concat(n.goodsImg, '" alt="">\n            ')
+        }), $("#women2").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "004", count: "4"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += "\n        <li>\n            <p>".concat(n.goodsName,
+            "</p>\n            <p>￥").concat(n.goodsPrice, '</p>\n            <img src="').concat(n.goodsImg, '" alt="">\n        </li>\n        ')
+        }), $("#keji>ul").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "004", count: "1"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += "\n            <strong>".concat(n.goodsName,
+            "</strong>\n            <span>").concat(n.beiyong1,
+            "</span>\n            <b>").concat(n.beiyong2, '</b>\n            <img src="').concat(n.goodsImg, '" alt="">\n            ')
+        }), $("#keji1").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "004", count: "1"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += "\n            <strong>".concat(n.goodsName,
+            "</strong>\n            <span>").concat(n.beiyong1,
+            "</span>\n            <b>").concat(n.beiyong2, '</b>\n            <img src="').concat(n.goodsImg, '" alt="">\n            ')
+        }), $("#keji2").html(o)
+    },
+    "json"), $.get("./php/getGoodsListNew.php",
+    { typeId: "005", count: "18"
+    }, function (n) { var o = ""; n.forEach(function (n) { o += '\n            <li>\n            <img src="'.concat(n.goodsImg, '" alt="">\n            <p>').concat(n.goodsDesc,
+            " </p>\n            <span>￥").concat(n.goodsPrice, '</span>\n            <strong><i class="iconfont icon-gouwuche"></i></strong>\n            <b>找相似</b>\n        </li>\n            ')
+        }), $("#like ul").html(o)
+    },
+    "json")
+} $(function () { getWenJu()
+});

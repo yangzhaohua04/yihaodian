@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/shoppingCart.css">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/productList.js"></script>
+    <script src="./js/shoppingCart.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/check.js"></script>
+</head>
+
+<body>
+    <div class="shopping_head">
+        <div class="shopping_head_top conter2">
+            <a href="./index.html"> <span><i class="iconfont icon-tongzhi"></i> 1号店首页</span></a>
+            <a href="">
+                <h3> <i class="iconfont icon-dizhi"></i>送货地址 : 上海</h3>
+            </a>
+            <ul>
+                <li class="userInfo">晚上好,请 <a href="login.html">登录 </a></li>
+                <li class="status"><a href="register.html">注册 </a></li>
+                <li><a href=""> <i class="iconfont icon-dingdan"></i> 我的订单</a></li>
+                <li><a href=""> 客户服务<i class="iconfont icon-jiantou9"></i></a></li>
+                <li><a href=""> <i class="iconfont icon-dingdan"></i> APP下载</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="shopping_head_conter ">
+        <div class="shopping_head_conter_t conter2 ">
+            <div class="shopping_logo">
+                <a href="index.html"></a>
+                <a href="index.html"></a>
+            </div>
+            <span>配送至：</span>
+            <!-- 购物车 -->
+            <div class="shopping_search">
+                <input type="text" value="请输入关键词">
+                <i class="iconfont icon-ziyuan"></i>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div class="shopping_list">
+        <div class="shopping_list_t">
+            <input class="quanxuan" type="checkbox">
+            <b>全选</b>
+            <span class="tit">商品信息</span>
+            <span class="price">单价（元）</span>
+            <span class="num">数量</span>
+            <span class="total">小计（元）</span>
+            <span class="act">操作</span>
+        </div>
+        <div class="shopping_lsit_c clear">
+        </div>
+    </div>
+    </div>
+
+    <div class="pay_box">
+        <div class="pay_tools_bar">
+            <!-- <div class="pay_tools_bar_l">
+                <input class="quanxuan" type="checkbox">
+                <p><b>全选（共<span>1</span>件）</b></p>
+            </div> -->
+            <div class="pay_tools_bar_r">
+                <p>已选商品<span class="shuliang">0</span>件</p>
+                <b>预览</b>
+                <span>合计: <span>￥</span><b class="heji">0.00</b><i class="iconfont "></i></span>
+                <button>去结算</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 尾部 -->
+    <div class="footer">
+        <div class="footer_t  content_shopping clear">
+            <ul class="shoping_li">
+                <li>
+                    <img src="images/i_footer1.jpg" alt="">
+                    <b>正品保障</b>
+                    <span>正品行货 放心选购</span>
+                </li>
+                <li>
+                    <img src="images/i_footer2.jpg" alt="">
+                    <b>满99包邮</b>
+                    <span>满99元 免运费</span>
+                </li>
+                <li>
+                    <img src="images/i_footer3.jpg" alt="">
+                    <b>售后无忧</b>
+                    <span> 7天无理由退货</span>
+                </li>
+                <li>
+                    <img src="images/i_footer4.jpg" alt="">
+                    <b>准时送达</b>
+                    <span>收货时间由你做主</span>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_c content_shopping clear">
+            <dl>
+                <dt>新手入门</dt>
+                <dd><a href="">购物流程</a></dd>
+                <dd><a href="">会员制度</a></dd>
+                <dd><a href="">订单查询</a></dd>
+                <dd><a href="">服务协议及隐私说明</a></dd>
+                <dd><a href="">网站地图</a></dd>
+            </dl>
+            <dl>
+                <dt>支付方式</dt>
+                <dd><a href="">货到付款</a></dd>
+                <dd><a href="">网上支付</a></dd>
+                <dd><a href="">礼品卡支付</a></dd>
+                <dd><a href="">其它支付</a></dd>
+            </dl>
+            <dl>
+                <dt>配送服务</dt>
+                <dd><a href="">配送进度查询</a></dd>
+                <dd><a href="">商品验货与签收</a></dd>
+            </dl>
+            <dl>
+                <dt>相关规则</dt>
+                <dd><a href=""> 平台规则</a></dd>
+                <dd><a href="">退换货政策</a></dd>
+                <dd><a href="">发票制度</a></dd>
+                <dd><a href="">帮助中心</a></dd>
+            </dl>
+            <!-- 二维码 -->
+            <div class="footer_code">
+                <div class="footer_code_l">
+                    <p>APP更优惠</p>
+                    <a href=""><img src="images/code1.png" alt=""></a>
+                </div>
+                <div class="footer_code_r"></div>
+                <p> 加微信查订单</p>
+                <img src="images/code2.jpg" alt="">
+            </div>
+        </div>
+        <div class="footer_b">
+            <p><a href="">沪ICP备16050468号</a> | <a href=""> 经营证照</a> | <a href="">互联网药品信息服务资格证(沪)-经营性-2017-0006</a> |
+                <a href="">违法和不良信息举报电话：4006063968</a> | <a href=""> 沪B2-20170039 </a> | <a href="">沪公网安备
+                    31010502002939号</a> | <a href="">友情链接</a> | <a href="">出版物经营许可证</a> | <a href="">增值电信业务经营许可证</a></p>
+            </p>
+            <span>Copyright© 1号店网上超市 2007-2019，All Rights Reserved</span>
+        </div>
+        <div class="trademark">
+            <a href=""><img src="images/trademark1.jpg" alt=""></a>
+            <a href=""><img src="images/trademark2.png" alt=""></a>
+            <a href=""><img src="images/trademark3.jpg" alt=""></a>
+            <a href=""><img src="images/trademark4.jpg" alt=""></a>
+            <a href=""><img src="images/trademark5.png" alt=""></a>
+            <a href=""><img src="images/trademark6.png" alt=""></a>
+            <a href=""><img src="images/trademark7.jpg" alt=""></a>
+        </div>
+    </div>
+
+    <script>
+        $(() => { })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+
+body{
+    background-color: #f5f5f5;
+    
+}
+
+.wuyi_conter{
+    width: 1228px;
+    margin:0 auto;
+}
+
+
+/* 头顶 */
+.pro_head{
+    height: 30px;
+    background-color: #f4f4f4;
+    border-bottom: solid #e5e5e5 1px;
+    overflow: hidden;
+}
+.pro_head_top{
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+.pro_head_top h3{
+    float: left;
+    padding:0 30PX 0 20px;
+    font-size: 12px;
+    
+}
+.pro_head_top>ul{
+    float: right;
+}
+/* .pro_head_top ul li:nth-child(1) ,.pro_head_top ul li:nth-child(1) a{
+    color: red;
+} */
+.pro_head_top ul li:nth-child(2) a:hover{
+    color: red;
+}
+.pro_head_top>ul>li{
+    float: left;
+    margin-right: 15px;
+}
+.pro_head_top>ul>li:nth-child(2) a{
+    color: #aaa;
+}
+.pro_head_top>ul>li:nth-child(3)>a,.pro_head_top>ul>li:nth-child(4)>a{
+    color: #666;
+}
+.pro_head_top>a>span{
+    float: left;
+}
+.icon-dizhi, .icon-tongzhi{
+    color: red;
+}
+
+
+.pro_head_top .icon-jiantou9{
+    font-size: 12px;
+    color: #aaa;
+    margin:0 10px 0 5px;
+}
+
+/* head_conter */
+.pro_head_conter{
+    background-color: white;
+    height: 90px;
+}
+.pro_head_conter_t{
+    height: 60px;
+    text-align: center;
+}
+
+.pro_logo{
+   float: left;
+
+}
+.pro_logo>a:nth-child(1){
+    display: block;
+    float: left;
+    width: 124px;
+    height: 90px;
+    padding-top: 35px;
+  
+}
+.pro_logo>a:nth-child(1) img{
+    width: 124px;
+    height: 33px;
+}
+.pro_logo>a:nth-child(2){
+    display: block;
+    float: left;
+    width: 219px;
+    height: 90px;
+}
+.pro_logo>a:nth-child(2) img{
+    width: 219px;
+    height: 90px;
+}
+.pro_logo>a{
+    float: left;
+}
+.pro_head_conter_t>ul{
+    float: left;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.pro_head_conter_t>ul>li:nth-child(1) a{
+    font-weight: 600;
+    color: #bc9c66;
+}
+.pro_head_conter_t>ul>li:nth-child(2) a:hover{
+    color: #bc9c66;
+    
+}
+.pro_head_conter_t>ul>li{
+    float: left;
+    height: 100%;
+    line-height: 70px;
+    font-size: 16px;
+    margin-left: 70px;
+}
+
+/* 购物车 */
+
+.pro_show{
+    float: right;
+    width: 130px;
+    height: 40px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    padding: 9px 0 9px;
+    text-align: center;
+    line-height: 20px; 
+    margin-top: 30px;
+}
+ .pro_show>a{
+     font-size: 16px;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    color: #666;
+}
+
+/* banner */
+.wuyi_banner{
+   padding:50px 0  60px 0;
+}
+
+.wuyi_banner_l{
+    box-shadow: 15px 0px 20px 5px rgba(71,71,71,0.22);
+    text-align: center;
+    float: left;
+    width: 320px;
+    height: 430px;
+    background:url(../images/wuyi-info-bg.png) ;
+    line-height: 80px;
+}
+.wuyi_banner_l>span{
+    display: inline-block;
+    border-radius: 50%;
+    width: 94px;
+    height: 94px;
+    margin-top: 50px;
+    border: 6px solid #fff;
+    box-shadow: 0px 0px 25px 0px rgba(71,71,71,0.22);
+    background-color: #ececec;
+    overflow: hidden;
+}
+.wuyi_banner_l>h3{
+    font-size: 16px;
+    color: #8e8abf;
+    margin-right: 10px;
+    font-weight: 600;
+    vertical-align: 4px;
+}
+.wuyi_banner_l>h3>i{
+    font-size: 28px;
+   position: relative;
+   top: 5px;
+}
+.wuyi_banner_l>span>img{
+    width: 82px;
+    height: 82px;
+}
+.wuyi_banner_l>button{
+    margin: 48px auto 0;
+    color: #fff;
+    text-align: center;
+    background-color: #a29fc0;
+    width: 200px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 7px 10px 0px rgba(71,71,71,0.22);
+}
+.wuyi_banner_l>button:hover{
+    background-color: #a38fcf;
+}
+
+.wuyi_banner_c{
+    float: left;
+    width: 635px;
+    height: 430px;
+    margin-top: 10px;
+}
+
+.wuyi_banner_c>img{
+    width: 635px;
+    height: 430px;
+}
+
+
+.wuyi_banner_r{
+    float: right;
+    margin-left: 10px;
+}
+.wuyi_banner_r>ul>li{
+    width: 260px;
+    height: 200px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 20px 5px rgba(71,71,71,0.22);
+    text-align: center;
+    background-color: #fff;
+}
+.wuyi_banner_r>ul>li>h3{
+    padding-top: 22px;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    color: #333;
+}
+.wuyi_banner_r h3:after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 117px;
+    width: 36px;
+    border-top: 2px solid #a38fcf;
+}
+.wuyi_banner_r>ul>li>img{
+    margin: 0 auto;
+    padding-top: 20px;
+    height: 120px;
+    width: 120px;
+    transition: 0.5s;
+}
+.wuyi_banner_r>ul>li>img:hover{
+    transform: scale(1.1);
+}
+
+
+/*热点活动  */
+.wuyi_jinbi_box{
+    padding-top: 50px;
+    background: #fff url(../images/wuyi_time_03.jpg) no-repeat top center;
+}
+.wuyi_jinbi{
+    
+}
+.wuyi_jinbi>h3{
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+.wuyi_jinbi>h3:after{
+    content: '';
+    width: 70px;
+    height: 4px;
+    position: absolute;
+    left: 65px;
+    bottom: -25px;
+    background-color: #d3bb93;
+}
+
+.wuyi_jinbi>ul{
+    width: 100%;
+    margin-top: 80px;
+}
+.wuyi_jinbi>ul>li{
+    position: relative;
+    float: left;
+    width: 32%;
+    height: 240px;
+    margin-left: 1%;
+    background-color: #f4f4f4;;
+    
+    overflow: hidden;
+}
+.wuyi_jinbi>ul>li>h3{
+    position: absolute;
+    top: 44px;
+    left: 35px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.wuyi_jinbi>ul>li>p{
+    position: absolute;
+    top: 82px;
+    left: 35px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #d2a55f;
+}
+.wuyi_jinbi>ul>li>p:after {
+    content: '';
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    background-color: #d2a55f;
+}
+.wuyi_jinbi>ul>li>img{
+    width: 216px;
+    height: 216px;
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    transition: 0.3s;
+}
+.wuyi_jinbi>ul>li>img:hover{
+    transform: translateX(-10px);
+}
+
+.wuyi_jinbi>h3:last-child{
+    padding-top: 30px;
+    margin-bottom: 50px;
+}
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <script src="./js/public.js"></script>
+</head>
+
+<body>
+
+    <div class="login_head clear">
+        <a href="index.html"><img src="images/login_login.jpg" alt=""></a>
+        <div class="login_head_help">
+            <dl>
+                <dt><b></b><a href="">帮助中心 <i></i></a></dt>
+                <dd><a href="">包裹跟踪</a></dd>
+                <dd><a href="">常见问题</a></dd>
+                <dd><a href="">在线退换货</a></dd>
+                <dd><a href="">在线投诉</a></dd>
+            </dl>
+        </div>
+        <span>您好，欢迎光临1号店!<a href="register.html">请注册</a></span>
+    </div>
+
+    <!--  -->
+    <div class="content">
+        <div class="content_c">
+            <a href=""><img src="images/login_pic.png" alt=""></a>
+            <div class="login_list clear">
+                <div id="messageBox">
+
+                </div>
+
+                <form action="">
+                    <h3>1号店用户登录</h3>
+                    <a href="register.html">注册新账号</a>
+                    <div class="form_item ">
+                        <label for="">&nbsp;</label>
+                        <input id="username" class="dl" type="text" value="">
+                    </div>
+                    <div class="form_item ">
+                        <label for="">&nbsp;</label>
+                        <input id="userpass" type="password" placeholder="密码" value="">
+                    </div>
+                    <div class="auto_form clear">
+                        <p><input type="checkbox"><a href=""> 自动登录 </a>
+                        </p>
+                        <span><a href="">忘记密码 </a> </span>
+                    </div>
+                    <div id="btnLogin" class="login_button">
+                        <span>登录</span>
+                    </div>
+                </form>
+                <p>更多合作网站账号登录</p>
+                <div class="logo">
+                    <ul>
+                        <li><a href=""><i class="iconfont icon-QQ"> </i></a></li>
+                        <li><a href=""><i class="iconfont icon-jingdong-"></i></a> </li>
+                        <li><a href=""><i class="iconfont icon-weixin"></i></a> </li>
+                        <li><a href=""> <i class="iconfont icon-weibo1"></i></a></li>
+                    </ul>
+                    <a href="">更多合作网站<span></span></a>
+                </div>
+                <b></b>
+            </div>
+            <div class="clear"></div>
+            <div class="footer">
+                <p><a href=""> 沪ICP备16050468号 </a>&nbsp; | &nbsp; <a href=""> 沪B2-20170039 </a>&nbsp; | &nbsp; <a
+                        href=""> 营业执照 </a></p>
+                <p>Copyright © 1号店网上超市 2007-2018，All Rights Reserved </p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".dl").focus();
+        })
+
+
+
+
+        $(function () {
+            $("#btnLogin").click(function () {
+
+
+                if ($("#username").val() == "" && $("#userpass").val() == "") {
+                    $("#messageBox").html("请输入用户名或密码").css("color", "#ff4040");
+                    return
+                }
+                $.post(
+                    "./php/login.php",
+                    {
+                        "username": $("#username").val(),
+                        "userpass": $("#userpass").val()
+                    },
+                    function (data) {
+                        if (data == "success") {
+                            localStorage.setItem("username", $("#username").val());
+                            $("#messageBox").html("登录成功！3秒后跳转到<a href='index.html'>首页</a>！");
+                            //保存cookie：
+                            // saveCookie("username", $("#username").val());
+                            setTimeout(() => {
+                                location.href = "index.html";
+                            }, 3000);
+                        } else if (data == "fail") {
+                            $("#messageBox").html("账号和密码不匹配，请重新输入！").css("color", "#ff4040");
+                        } else {
+                            $("#messageBox").html("服务器出错了！");
+                        }
+                    }
+                );
+
+            });
+        });
+    </script>
+</body>
+
+</html>

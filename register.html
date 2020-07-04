@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+</head>
+
+<body>
+
+    <div class="login_head clear">
+        <a href="index.html"><img src="images/login_login.jpg" alt=""></a>
+        <div class="login_head_help">
+            <i class="iconfont "></i>
+            <dl>
+                <dt><b></b><a href="">帮助中心 <i></i></a></dt>
+                <dd><a href="">包裹跟踪</a></dd>
+                <dd><a href="">常见问题</a></dd>
+                <dd><a href="">在线退换货</a></dd>
+                <dd><a href="">在线投诉</a></dd>
+            </dl>
+        </div>
+        <span>您好，欢迎光临1号店!<a href="login.html">请登录</a></span>
+    </div>
+
+    <!--  -->
+    <div class="content">
+        <div class="content_c">
+            <h3>1号店注册 </h3>
+            <ul>
+                <li><input id="username" placeholder="用户名" type="text"><span id="showUser"></span></li>
+                <!-- <li><input type="phone"><span>手机号</span></li>
+                <li class="clear">
+                    <div class="yanzhen1"><input type="text"><span>短信验证</span></div>
+                    <div class="yanzhen2"><button>获取验证码</button></div>
+                </li> -->
+                <li>
+                    <div class="content_li1">
+                        <input type="text" maxlength="6" placeholder="请输入验证码" id="imageCode">
+                        <span class="form-group__message"></span>
+                        <div class="image-code-box">
+                            <canvas id="captcha"></canvas>
+                        </div>
+                    </div>
+                </li>
+                <li><input id="userpass" placeholder="请输入密码" type="password"><span id="showPass"></span> </li>
+                <li><input id="userpass2" placeholder="请确定密码" type="password"><span id="showPass2"></span></li>
+            </ul>
+            <p>点击注册，表示您同意1号店 <a href="">《服务协议及隐私声明》</a></p>
+            <input id="btnReg" type="button" value="同意协议并注册" />
+            <div id="messageBox">
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p><a href=""> 沪ICP备16050468号 </a>&nbsp; | &nbsp; <a href=""> 沪B2-20170039 </a>&nbsp; | &nbsp; <a href="">
+                营业执照 </a></p>
+        <p>Copyright © 1号店网上超市 2007-2018，All Rights Reserved </p>
+    </div>
+
+
+    <script src="./js/jquery-3.2.1.min.js"></script>
+
+    <script src="./js/captcha.js"></script>
+    <!-- <script src="./js/md5.js"></script>  -->
+    <script>
+
+        // 一、先做前端的表单验证
+        //功能：所有前端的验证；
+        function isTest() {
+            return isUserName() && isPass() && isPass2() && tuying();
+        }
+        //1、用户名的前端验证
+        function isUserName() {
+            //1)、非空判断
+            if ($("#username").val() == "") {
+                return false;
+            }
+            //2)、格式判断
+            // 用户名有数字，字母下划线组成，但不能以数字开头，2-10位
+            let reg = /^[0-9a-zA-Z_]\w{3,18}$/;
+            if (!reg.test($("#username").val())) {
+                return false;
+            }
+            return true;
+        }
+
+        //2、密码的前端验证
+        function isPass() {
+            //1)、非空判断
+            if ($("#userpass").val() == "") {
+                return false;
+            }
+            //2)、格式判断
+            // 数字，6-16位
+            let reg = /^[0-9a-zA-Z_]\w{5,18}$/
+            if (!reg.test($("#userpass").val())) {
+                return false;
+            }
+            return true;
+        }
+
+        function isPass2() {
+            if ($("#userpass").val() != $("#userpass2").val()) {
+                return false;
+            }
+            return true;
+        }
+
+        let imgCode;
+        /*不传值，统一走默认值*/
+        let captcha = new Captcha({
+            lineWidth: 1, //线条宽度
+            lineNum: 2, //线条数量
+            preGroundColor: [10, 80], //前景色区间
+            backGroundColor: [150, 250], //背景色区间
+            fontSize: 40, //字体大小
+            // fontFamily: ['Georgia', '微软雅黑', 'Helvetica', 'Arial'], //字体类型
+            // fontStyle: 'stroke', //字体绘制方法，有fill和stroke
+            content: '0123456789', //验证码内容
+            length: 4 //验证码长度
+        });
+
+        captcha.draw(document.querySelector('#captcha'), r => {
+            console.log('验证码', r);
+            imgCode = r;
+            /* 自动触发标签的事件 */
+            $("#imageCode").trigger("blur");
+        });
+        console.log(imgCode);
+
+        $("#imageCode").blur(function () {
+            if (imgCode !== $("#imageCode").val()) {
+                $(".form-group__message").html("验证码不正确").css("background-color", "gainsboro")
+                return
+            } else {
+                $(".form-group__message").html("").css({ "display": "none" });
+            }
+        });
+        function tuying() {
+            if (imgCode !== $("#imageCode").val()) {
+                return false
+            } else {
+                return true
+            }
+        }
+
+        //二、后端验证
+        let hasUser = false;//该用户名不存在
+        function hasUserBack() {
+            //后端验证用户名是否存在
+            $.get("./php/checkUser.php", { "username": $("#username").val() }, function (data) {
+                if (data == "0") {
+                    $("#showUser").html("该用户名已经存在，请重新输入！").css({ "color": "red" });
+                    hasUser = true;
+                }
+                else {
+                    $("#showUser").html("").css({ "display": "none" });
+                    hasUser = false;
+                }
+            })
+        }
+        $(function () {
+            //用户名
+            $("#username").focus(function () {
+                //1、前端验证
+                $("#showUser").html("*4-20个字符可由数字，字母或符号\“_\"组成").css({
+                    "background-color": "#fff4d7"
+                });
+
+                // hasUserBack().
+                return;
+            });
+            $("#username").blur(function () {
+                // if (isUserName() == true) {
+                //     $("#showUser").html("此用户名可以使用").css("background-color", "skyblue");
+                //     return;
+                // }
+                if (isUserName() == false) {
+                    $("#showUser").html("*用户名的格式不正确,请重新输入").css("background-color", "gainsboro");
+                    return;
+                }
+                //2、后端的验证
+                hasUserBack();
+                return
+            });
+            // 密码
+            $("#userpass").focus(function () {
+                //1、前端验证
+                $("#showPass").html("*6-20个字符可由数字，字母或符号\“_\"组成").css({
+                    "background-color": "#fff4d7"
+                });
+                return;
+            });
+            $("#userpass").blur(function () {
+                //1、前端验证
+
+                if (isPass() == false) {
+                    $("#showPass").html("*密码格式不正确！").css("background-color", "gainsboro");
+                    return;
+                }
+                else {
+                    $("#showPass").html("此密码可以使用").css("display", "none");
+                    return
+                }
+            });
+            $("#userpass2").blur(function () {
+                //1、前端验证
+                if ($("#userpass").val() != $("#userpass2").val()) {
+                    $("#showPass2").html("*密码不一致").css("background-color", "gainsboro");
+                    return;
+                }
+                else {
+                    $("#showPass2").html("*").css("display", "none");
+                    return;
+                }
+            });
+            $("#btnReg").click(function () {
+                //1、前端验证
+                if (isTest() == false) {
+                    $("#messageBox").html("信息有误，请重新输入").css("color", "#ff4040");
+                    return;
+                }
+
+                if (hasUser) {
+                    return;
+                }
+
+                $.post(
+                    "./php/addUser.php",
+                    {
+                        "username": $("#username").val(),
+                        "userpass": $("#userpass").val()
+                    },
+                    function (data) {
+                        if (data == "success") {
+                            $("#messageBox").css({ "color": "green" });
+                            $("#messageBox").html("恭喜您，注册成功！2秒后跳转到<a href='./login.html'>登录</a>页面");
+                            setTimeout(() => {
+                                location.href = "login.html";
+                            }, 2000);
+                        } else if (data == "fail") {
+                            $("#messageBox").css({ "color": "red" });
+                            $("#messageBox").html("该用户名已存在!");
+                        } else {
+                            $("#messageBox").css({ "color": "red" });
+                            $("#messageBox").html("服务器出问题了!");
+                        }
+                    }
+                );
+            });
+        });
+
+    </script>
+</body>
+
+</html>
