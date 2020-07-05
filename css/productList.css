@@ -354,12 +354,17 @@ body {
   float: left;
   width: 280px;
   height: 398px;
-margin: 5px;
+  margin: 5px;
   background-color: #fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   border-radius: 5px; }
+
+
+ .display {
+    display: block;
+  }
 
 .boutique_list ul li img {
   width: 242px;
@@ -421,6 +426,25 @@ overflow:hidden
     /* border: 1px red solid; */
     overflow: hidden;
   }
+.jiaru{
+   width: 100px;
+   height: 30px;
+   line-height: 30px;
+   border: 2px solid #e5e5e5;
+   background: #fff;
+   text-align: center;
+   position: absolute;
+   left: 90px;
+   bottom: 10px;
+   color: #75AB2B;
+
+}
+.none2{
+  display: none;
+}
+.block{
+  display: block;
+}
 
 
 .boutique_show>p{

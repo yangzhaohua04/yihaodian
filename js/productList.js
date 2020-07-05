@@ -22,6 +22,7 @@ $(() => {
                         <b>¥${item.price}. <strong>0</strong></b>
                         <span>${item.price2}</span>
                         <p class="cat">加入购物车</p>
+                        <strong class="jiaru none2">加入成功</strong>
                     </div>
                 </div>
             </div>
@@ -30,6 +31,8 @@ $(() => {
         }).join("");
         $(".boutique_list>ul").html(html);
     })
+
+
 
 
 
@@ -46,6 +49,11 @@ $(() => {
         }).done(function (data) {
             console.log(data)
         })
+
+        $(this).next().addClass("block").removeClass("none2")
+        setInterval(() => {
+            $(this).next().addClass("none2").removeClass("block")
+        }, 2500);
     })
 
 

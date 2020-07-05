@@ -38,8 +38,8 @@ function getWenJu() {
             if (idx < 9) {
                 return `
                 <li>
-                    <a href=""><img src="${item["img"]}" alt="">
-                    <a href=""> ${item.titile}</a>
+                    <a href="./productList.html"><img src="${item["img"]}" alt="">
+                    <a href="./productList.html"> ${item.titile}</a>
                     <div class="speed"><span style="width: ${item.percent}"></span></div>
                     <span>¥${item.price}</span><b>￥${item.price2}</b></a>
                 </li> 
@@ -259,11 +259,11 @@ function getWenJu() {
         let html = data.map((item, idx) => {
             if (idx < 18) {
                 return `
-                <li>
+                <li data-id=${item.id}>
                 <img src="${item["img"]}" alt="">
                 <p> ${item.titile} </p>
                 <span>￥${item.price}</span>
-                <strong><i class="iconfont icon-gouwuche"></i></strong>
+                <strong class="cat"><i class="iconfont icon-gouwuche"></i></strong>
                 <b>找相似</b>
                 </li> 
                 `
@@ -271,6 +271,30 @@ function getWenJu() {
         }).join("");
         $("#like ul").html(html);
     })
+
+
+    $("#like").on("click", ".cat", function () {
+        console.log(123);
+
+        var id = $(this).parents("li[data-id]").data(id).id;
+
+        var username = localStorage.getItem("username");
+        console.log(id, username);
+
+        $.ajax({
+            url: "./php/addcart.php",
+            data: `id=${id}&username=${username}`
+        }).done(function (data) {
+            console.log(data)
+        })
+
+        $(".tianjia").addClass("block").removeClass("none2");
+        setInterval(() => {
+            $(".tianjia").addClass("none2").removeClass("block");
+        }, 1500);
+
+    })
+
 
 
     // 导航栏显示

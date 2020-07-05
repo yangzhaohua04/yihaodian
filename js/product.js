@@ -41,5 +41,26 @@ $(() => {
         $(".mirror-box").css("display", "none")
         $(".big_box").css("display", "none")
     })
+
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 830) {
+            $(".details>ul").addClass("fixed");
+        }
+        else {
+            $(".details>ul").removeClass("fixed");
+        }
+    })
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 400) {
+            $(".right_box").addClass("opacity");
+        }
+        else {
+            $(".right_box").removeClass("opacity");
+        }
+    })
+
+
 })
 
